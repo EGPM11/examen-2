@@ -1,0 +1,7 @@
+{
+  "name": "Emergencia",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
