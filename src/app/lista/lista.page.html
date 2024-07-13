@@ -1,0 +1,29 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Lista</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Lista</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-list lines="full">
+    <ion-item *ngFor="let event of events" (click)="viewEvent(event)">
+      <ion-thumbnail slot="start">
+        <img [src]="event.photo" *ngIf="event.photo" alt="Evento">
+      </ion-thumbnail>
+      <ion-label>
+        <h2>{{ event.title }}</h2>
+        <p>{{ event.date }}</p>
+        <p>{{ event.description }}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

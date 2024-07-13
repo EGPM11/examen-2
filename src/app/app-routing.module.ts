@@ -2,15 +2,10 @@ import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
-  {
-    path: '',
-    redirectTo: 'folder/Inbox',
-    pathMatch: 'full'
-  },
-  {
-    path: 'folder/:id',
-    loadChildren: () => import('./folder/folder.module').then( m => m.FolderPageModule)
-  }
+  { path: '', redirectTo: 'lista', pathMatch: 'full' },
+  { path: 'registro', loadChildren: () => import('./registro/registro.module').then(m => m.RegistroPageModule) },
+  { path: 'lista', loadChildren: () => import('./lista/lista.module').then(m => m.ListaPageModule) },
+  { path: 'detalles', loadChildren: () => import('./detalles/detalles.module').then(m => m.DetallesPageModule) },
 ];
 
 @NgModule({
